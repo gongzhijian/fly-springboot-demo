@@ -1,6 +1,6 @@
 package com.example.flyspringbootdemo.test;
 
-import geex.gong.springbootdemo.domain.User;
+import com.example.flyspringbootdemo.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 
@@ -18,10 +18,12 @@ public class BianMaGuiFan {
     public static void main(String[] args) {
         String req=null;
         log.info("isNull用法：result[{}]",Objects.isNull(req));
-        if(!Objects.isNull(req))
+        if(!Objects.isNull(req)){
             log.info("结果为null");
-        else
+        }
+        else{
             log.info("结果不为null");
+        }
         ArrayList<Object> list = new ArrayList<>();
         log.info("判断是否为空集合[{}]",CollectionUtils.isEmpty(list));
         User user=new User();
