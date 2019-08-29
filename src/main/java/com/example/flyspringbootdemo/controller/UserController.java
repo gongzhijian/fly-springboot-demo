@@ -44,7 +44,7 @@ public class UserController {
 
     @RequestMapping("/set")
     public User set(@RequestBody User user){
-        log.info("此人为：",user);
+        log.info("此人为：{}",user);
         return user;
     }
 

@@ -15,6 +15,7 @@ public enum CodeType {
     HR_GEEX_XGTX("修改调休"),
     HR_GEEX_XGCSNJ("修改初始年假");
 
+
     private String typeName;
     CodeType(String typeName){
         this.typeName = typeName;
@@ -45,9 +46,5 @@ public enum CodeType {
         return map;
     }
 
-    public static void main(String[] args) {
-        System.out.println(getValuesList());
 
-
-    }
 }
