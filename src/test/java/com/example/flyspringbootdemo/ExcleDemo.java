@@ -6,7 +6,7 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
-import geex.gong.springbootdemo.easyexcle.ImportInfo;
+import com.example.flyspringbootdemo.easyexcle.ImportInfo;
 import org.junit.Test;
 
 import java.io.*;

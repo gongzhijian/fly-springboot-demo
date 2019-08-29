@@ -1,7 +1,7 @@
 package com.example.flyspringbootdemo;
 
-import geex.gong.springbootdemo.controller.UserController;
-import geex.gong.springbootdemo.domain.User;
+import com.example.flyspringbootdemo.controller.UserController;
+import com.example.flyspringbootdemo.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
