@@ -39,6 +39,7 @@ public class UserController {
     public User get(){
         User user = new User();
         user.setCreareDate(new Date());
+        log.info("开始进入了");
         return user;
     }
 
