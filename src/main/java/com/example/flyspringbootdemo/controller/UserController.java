@@ -1,5 +1,6 @@
 package com.example.flyspringbootdemo.controller;
 
+import com.alibaba.excel.EasyExcelFactory;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
@@ -11,6 +12,9 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.SystemUtils;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -173,5 +177,39 @@ public class UserController {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    @RequestMapping("/doExcle")
+    public void doExcel(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        String fileName="门店开户处理"+ System.currentTimeMillis()+".xlsx";
+        setResponseHeader(response,fileName);
+        ArrayList<Object> list = new ArrayList<>();
+        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+        ExcelWriter writer = EasyExcelFactory.getWriter(response.getOutputStream());
+        hssfWorkbook.write(response.getOutputStream());
+    }
+
+
+
+
+
+
+    //发送响应流方法
+    public void setResponseHeader(HttpServletResponse response, String fileName) {
+        try {
+            try {
+                fileName = new String(fileName.getBytes(),"ISO8859-1");
+            } catch (UnsupportedEncodingException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            response.setContentType("application/octet-stream;charset=ISO8859-1");
+            response.setHeader("Content-Disposition", "attachment;filename="+ fileName);
+            response.addHeader("Pargam", "no-cache");
+            response.addHeader("Cache-Control", "no-cache");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

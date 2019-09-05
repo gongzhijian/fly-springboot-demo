@@ -12,7 +12,7 @@ import org.apache.commons.mail.HtmlEmail;
 public class MySendEmail {
 
 
-    public static void mian(String[] agrs) throws EmailException {
+    public static void main(String[] agrs) throws EmailException {
         try{
             HtmlEmail email=new HtmlEmail();//创建电子邮件对象
             email.setSSL(true);
@@ -25,7 +25,7 @@ public class MySendEmail {
             email.setSubject("一腔诗意喂了狗");//设置邮件主题
             email.setMsg("this is a test mali with attch");//设置邮件文本内容
             email.setMsg("this is mail with test1");
-            email.addTo("545972892@qq.com");//设置收件人
+            email.addTo("1925634359@qq.com");//设置收件人
 //            EmailAttachment attach =new EmailAttachment();//附件对象
 //            attach.setPath("C:/temp/wenzhi.doc");//附件文件在系统中的路径
 //            attach.setDescription(EmailAttachment.ATTACHMENT);
